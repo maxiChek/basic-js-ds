@@ -22,27 +22,27 @@ const { NotImplementedError } = require('../extensions/index.js');
  *   }
  * }
  */
-function removeKFromList( l, k ) {
-  let dupL = l
-  let curr = dupL.next
+function removeKFromList(l, k) {
+  let dupL = l;
+  let curr = dupL.next;
 
-  dupL.value === k ? l = curr : null
+  dupL.value === k ? (l = curr) : null;
 
-  for(curr;  curr.next !== null; ) {
-    if(curr.value !== k) {
-      dupL = curr
-      curr = curr.next
+  for (curr; curr.next !== null; ) {
+    if (curr.value !== k) {
+      dupL = curr;
+      curr = curr.next;
     } else {
-      dupL.next = curr.next
-      curr = curr.next
+      dupL.next = curr.next;
+      curr = curr.next;
     }
   }
 
-  curr.value === k ? dupL.next = null : null
+  curr.value === k ? (dupL.next = null) : null;
 
-  return l
+  return l;
 }
 
 module.exports = {
-  removeKFromList
+  removeKFromList,
 };
